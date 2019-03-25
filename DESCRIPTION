@@ -1,0 +1,14 @@
+Package: ding
+Type: Package
+Title: DingTalk Robot
+Version: 0.0.1
+Date: 2019-03-25
+Authors@R: person("Jeevan", "Yue", email = "jeevanyue@foxmail.com", role = c("aut", "cre"))
+Description: Group robots are advanced extension functions of DingTalk group. It can send message to DingTalk group.
+URL: https://github.com/jeevanyue/ding
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports:
+    httr
+RoxygenNote: 6.1.1
