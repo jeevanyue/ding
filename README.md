@@ -5,6 +5,13 @@
 
 关于如何创建机器人，获取webhook，以及其他更多详细信息请参考[自定义机器人](https://open-doc.dingtalk.com/microapp/serverapi2/qf2nxq)
 
+## 安装
+ding包的源代码在分享在Github，jeevanyue/ding，可通过下列方式安装。
+
+```
+devtools::install_github("jeevanyue/ding")
+```
+
 ## 消息类型及数据格式
 
 ### 配置webhook
