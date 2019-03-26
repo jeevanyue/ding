@@ -25,8 +25,8 @@
 #'
 #' sendChat(
 #'   webhook = webhook, msgtype = 'link',
-#'   title = '中"毒"已深',
-#'   text = '有 "毒" 的 \n 运动x潮流x装备',
+#'   title = '中“毒”已深',
+#'   text = '有 “毒” 的 \n 运动x潮流x装备',
 #'   messageUrl = 'http://www.poizon.com',
 #'   picUrl = 'https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png')
 #'
@@ -41,15 +41,15 @@
 #'
 #' sendChat(
 #'   webhook = webhook, msgtype = 'actionCard',
-#'   title = '中"毒"已深',
-#'   text = "![Du APP](https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png) \n ### 有 "毒" 的 运动x潮流x装备 \n 球鞋鉴别靠谱有效，你喜欢的不容错过，看上就买严格把控，志趣相投玩在一起，商家入驻优惠快捷",
+#'   title = '中“毒”已深',
+#'   text = "![Du APP](https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png) \n ### 有 “毒” 的 运动x潮流x装备 \n 球鞋鉴别靠谱有效，你喜欢的不容错过，看上就买严格把控，志趣相投玩在一起，商家入驻优惠快捷",
 #'   singleTitle = "阅读全文",
 #'   singleURL = 'http://www.poizon.com/')
 #'
 #' sendChat(
 #'   webhook = webhook, msgtype = 'actionCard',
-#'   title = '中"毒"已深',
-#'   text = '![Du APP](https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png) \n ### 有 "毒" 的 \n 运动x潮流x装备',
+#'   title = '中“毒”已深',
+#'   text = '![Du APP](https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png) \n ### 有 “毒” 的 \n 运动x潮流x装备',
 #'   btns = list(
 #'     list(title = '内容不错', actionURL = 'http://www.poizon.com/'),
 #'     list(title = '不感兴趣', actionURL = 'http://www.poizon.com/')
@@ -59,7 +59,7 @@
 #'   list(title = '毒APP',
 #'        messageURL = 'http://www.poizon.com',
 #'        picURL = 'https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png'),
-#'   list(title = '中"毒"已深',
+#'   list(title = '中“毒”已深',
 #'        messageURL = 'http://www.poizon.com',
 #'        picURL = 'https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png'))
 #' sendChat(
@@ -166,7 +166,7 @@ sendChat <- function(webhook = NULL, msgtype = 'text', content = NULL, title = N
     encode = 'json',
     body = post_body
   )
-  if(result){
+  if(isTRUE(result)){
     httr::content(message)
   }
 }
