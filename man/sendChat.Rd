@@ -40,57 +40,9 @@ sendChat(webhook = NULL, msgtype = "text", content = NULL,
 \item{atMobiles}{The mobile phone number of the person}
 
 \item{isAtAll}{All the people, default is FALSE}
+
+\item{result}{Return message result, default FALSE.}
 }
 \description{
 DingTalk Robot send message
-}
-\examples{
-webhook <- 'https://oapi.dingtalk.com/robot/send?access_token=your_token'
-sendChat(
-  webhook = webhook, msgtype = 'text',
-  content = "妞妞最可爱",
-  atMobiles = list('152****7197'))
-
-sendChat(
-  webhook = webhook, msgtype = 'link',
-  title = '中“毒”已深',
-  text = '有 “毒” 的 \\n 运动x潮流x装备',
-  messageUrl = 'http://www.poizon.com',
-  picUrl = 'https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png')
-
-sendChat(
-  webhook = webhook, msgtype = 'markdown',
-  title = '上海天气',
-  text = paste0(
-    '#### 上海天气\\n',
-    '> 14度，东北风2级，空气良53，相对温度48\%\\n\\n',
-    '> ![spring](http://www.ccdi.gov.cn/lswh/wenhua/wyzd/201803/W020180301632355806894.jpg)\\n',
-    '> ###### 10点20分发布 [天气](https://www.seniverse.com/) \\n'))
-
-sendChat(
-  webhook = webhook, msgtype = 'actionCard',
-  title = '中“毒”已深',
-  text = "![Du APP](https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png) \\n ### 有 “毒” 的 运动x潮流x装备 \\n 球鞋鉴别靠谱有效，你喜欢的不容错过，看上就买严格把控，志趣相投玩在一起，商家入驻优惠快捷",
-  singleTitle = "阅读全文",
-  singleURL = 'http://www.poizon.com/')
-
-sendChat(
-  webhook = webhook, msgtype = 'actionCard',
-  title = '中“毒”已深',
-  text = '![Du APP](https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png) \\n ### 有 “毒” 的 \\n 运动x潮流x装备',
-  btns = list(
-    list(title = '内容不错', actionURL = 'http://www.poizon.com/'),
-    list(title = '不感兴趣', actionURL = 'http://www.poizon.com/')
-  ))
-
-links <- list(
-  list(title = '毒APP',
-       messageURL = 'http://www.poizon.com',
-       picURL = 'https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png'),
-  list(title = '中“毒”已深',
-       messageURL = 'http://www.poizon.com',
-       picURL = 'https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png'))
-sendChat(
-  webhook = webhook, msgtype = 'feedCard',
-  links = links)
 }

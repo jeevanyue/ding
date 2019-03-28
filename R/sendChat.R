@@ -15,9 +15,12 @@
 #' @param atMobiles The mobile phone number of the person
 #' @param isAtAll All the people, default is FALSE
 #' @param msgtype Message type, includes text, markdown, link, actionCard and  feedCard. Default text.
+#' @param result Return message result, default FALSE.
 #'
 #' @examples
 #' webhook <- 'https://oapi.dingtalk.com/robot/send?access_token=your_token'
+#' picURL <- 'https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png'
+#'
 #' sendChat(
 #'   webhook = webhook, msgtype = 'text',
 #'   content = "妞妞最可爱",
@@ -28,7 +31,7 @@
 #'   title = '中“毒”已深',
 #'   text = '有 “毒” 的 \n 运动x潮流x装备',
 #'   messageUrl = 'http://www.poizon.com',
-#'   picUrl = 'https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png')
+#'   picUrl = picURL)
 #'
 #' sendChat(
 #'   webhook = webhook, msgtype = 'markdown',
@@ -42,14 +45,19 @@
 #' sendChat(
 #'   webhook = webhook, msgtype = 'actionCard',
 #'   title = '中“毒”已深',
-#'   text = "![Du APP](https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png) \n ### 有 “毒” 的 运动x潮流x装备 \n 球鞋鉴别靠谱有效，你喜欢的不容错过，看上就买严格把控，志趣相投玩在一起，商家入驻优惠快捷",
+#'   text = paste0(
+#'   "![Du APP](",picURL,") \n ",
+#'   "### 有 “毒” 的 运动x潮流x装备 \n ",
+#'   "球鞋鉴别靠谱有效，你喜欢的不容错过，看上就买严格把控，志趣相投玩在一起，商家入驻优惠快捷"),
 #'   singleTitle = "阅读全文",
 #'   singleURL = 'http://www.poizon.com/')
 #'
 #' sendChat(
 #'   webhook = webhook, msgtype = 'actionCard',
 #'   title = '中“毒”已深',
-#'   text = '![Du APP](https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png) \n ### 有 “毒” 的 \n 运动x潮流x装备',
+#'   text = paste0(
+#'   '![Du APP](',picURL,') \n ',
+#'   '### 有 “毒” 的 \n 运动x潮流x装备'),
 #'   btns = list(
 #'     list(title = '内容不错', actionURL = 'http://www.poizon.com/'),
 #'     list(title = '不感兴趣', actionURL = 'http://www.poizon.com/')
@@ -58,10 +66,10 @@
 #' links <- list(
 #'   list(title = '毒APP',
 #'        messageURL = 'http://www.poizon.com',
-#'        picURL = 'https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png'),
+#'        picURL = 'picURL),
 #'   list(title = '中“毒”已深',
 #'        messageURL = 'http://www.poizon.com',
-#'        picURL = 'https://du.hupucdn.com/news_byte1022byte_9774f29b986b8773640120bf4c07cc2e_w100h100.png'))
+#'        picURL = picURL))
 #' sendChat(
 #'   webhook = webhook, msgtype = 'feedCard',
 #'   links = links)
